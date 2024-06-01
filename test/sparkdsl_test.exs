@@ -16,6 +16,7 @@ defmodule SparkdslTest do
       end
     end
 
-    # _dsl_config = Exam.spark_dsl_config() |> dbg
+    _dsl_config = Exam.spark_dsl_config() |> dbg
+    # * Run mix test to see the results
   end
 end
