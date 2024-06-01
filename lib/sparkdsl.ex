@@ -46,7 +46,52 @@ defmodule Sparkdsl do
   defmodule Dsl do
     @question %Spark.Dsl.Entity{
       name: :question,
-      describe: "Define a question in a quiz"
+      describe: "Define a question in a quiz",
+      examples: [
+        "question \"Why now\"?"
+      ],
+      target: Question,
+      args: [:title],
+      schema: [
+        title: [
+          type: :string,
+          required: true,
+          doc: "The question itself"
+        ]
+      ]
     }
+
+    @quiz %Spark.Dsl.Entity{
+      name: :quiz,
+      describe: "Define a quiz with questions",
+      examples: [
+        "quiz \"Pop quiz!\", :multiple_choice"
+      ],
+      target: Quiz,
+      args: [:name, :type],
+      entities: [questions: [@question]],
+      schema: [
+        name: [
+          type: :string,
+          required: true,
+          doc: "The quiz title"
+        ],
+        type: [
+          type: :atom,
+          required: true,
+          doc: "The type of quiz"
+        ]
+      ]
+    }
+
+    @toplevel_section %Spark.Dsl.Section{
+      name: :quizzes,
+      # top_level: true,
+      entities: [@quiz]
+    }
+
+    use Spark.Dsl.Extension, sections: [@toplevel_section]
   end
+
+  use Spark.Dsl, default_extensions: [extensions: [Dsl]]
 end
