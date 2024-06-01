@@ -1,0 +1,25 @@
+
+A Domain Specific Language (DSL) is a computer programming language of limited expressiveness designed for a very specific purpose or a particular kind of problem. Most languages you hear of are General Purpose Languages, which can handle most things you run into during a software project. Each DSL can only handle one specific aspect of a system.
+
+
+for example Ecto has its own dsl for making sql queries.
+
+Internal DSLs are particular ways of using a host language to give the host language the feel of a particular language.
+
+External DSLs have their own custom syntax and you write a full parser to process them. There is a strong tradition of doing this in the Unix community.
+
+DSLs can be implemented either by interpretation or code generation. 
+Interpretation (reading in the DSL script and executing it at run time) is usually easiest, but code-generation is sometimes essential.
+ Usually the generated code is itself a high level language, such as Java or C.
+
+
+ I see DSLs as having two main benefits. 
+ 
+ The most common benefit is that they make certain kinds of code easier to comprehend, which makes it much easier to modify, thus improving programmer productivity. This is worthwhile all on its own and is relatively easy to achieve.
+
+The most interesting benefit, however, is that a well designed DSL can be understandable by business people, allowing them to directly comprehend the code that implements their business rules.
+
+
+When should I consider making a DSL?
+
+When you are looking at an aspect of system with rich business rules or work-flow. A well-written DSL should allow customers to understand the rules by which the system works.
