@@ -4,7 +4,7 @@ A Domain Specific Language (DSL) is a computer programming language of limited e
 
 for example Ecto has its own dsl for making sql queries.
 
-Internal DSLs are particular ways of using a host language to give the host language the feel of a particular language.
+Internal DSLs are particular ways of using a host language to give the host language the feel of a particular language.An internal dsl uses the facilities of the host language.
 
 External DSLs have their own custom syntax and you write a full parser to process them. There is a strong tradition of doing this in the Unix community.
 
