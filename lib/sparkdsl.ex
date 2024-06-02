@@ -1,6 +1,7 @@
 defmodule Sparkdsl do
   @moduledoc """
-  Documentation for `Sparkdsl`.
+  The `Sparkdsl` DSL.
+
   ## Example
 
   ```
